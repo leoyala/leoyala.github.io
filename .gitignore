@@ -5,6 +5,8 @@ __pycache__/
 *.idea
 _site
 .jekyll-cache/
+Gemfile.lock
+Gemfile
 
 # C extensions
 *.so
