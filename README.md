@@ -1,6 +1,4 @@
 
-<link rel="shortcut icon" type="image/x-icon" href="favicon.png">
-
 ## Random collection of posts
 
 This is a random collection of posts that I once wished had been available when I was looking for them.
