@@ -13,4 +13,3 @@ comments: true
 {% if page.comments == true and site.disqus.shortname %}
     {% include disquss.html %}
 {% endif %}
-{% include share-buttons.html %}
