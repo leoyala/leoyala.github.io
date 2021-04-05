@@ -1,1 +1,6 @@
 theme: jekyll-theme-minimal
+
+title: LEO's
+logo: /assets/img/logo.png
+description: A collection of posts related to data science, physics, machine learning, etc.
+show_downloads: true
