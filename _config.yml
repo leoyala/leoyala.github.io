@@ -4,5 +4,19 @@ title: LEO's
 logo: /assets/img/logo.png
 description: A collection of posts related to data science, physics, machine learning, etc.
 show_downloads: true
+class: wide
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      classes: wide
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
 disqus:
   shortname: https-leoyala-github-io-leo
