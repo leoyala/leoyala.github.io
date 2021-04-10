@@ -259,7 +259,7 @@ plt.savefig("plot.png")
 We can see now that the results are very similar.
 
 ![](assets/img/plotly_continuos_band/plot.png)
-![](https://github.com/leoyala/leo/blob/master/assets/img/plotly_continuos_band/plot.html)
+![](leoyala.github.io/leo/assets/img/plotly_continuos_band/plot.html)
 
 In addition, if you have already computed the errors and are included in the dataframe as columns, you can pass this 
 parameter in order to override the aggregation functionality. Let's see this in the same example as before, but now we 
@@ -277,7 +277,7 @@ figure = sns.lineplot(data=fmri, x="timepoint", y="signal", hue="region", style=
 plt.savefig("plot_agg.png")
 ```
 ![](assets/img/plotly_continuos_band/plot_agg.png)
-![](https://github.com/leoyala/leo/blob/master/assets/img/plotly_continuos_band/plot_agg.html)
+![](leoyala.github.io/leo/assets/img/plotly_continuos_band/plot_agg.html)
 
 Finally, we can profile the performance of each method to see how much time it takes to plot the results using each implementation.
 You can see that our custom implementation (with error bands) takes nearly 4 times longer than plotly (without error bands) and around 3 times longer
