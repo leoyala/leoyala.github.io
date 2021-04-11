@@ -8,6 +8,7 @@ categories: plot dynamic
 tags: plotly seaborn pandas dynamic
 permalink: plotly-error-band
 comments: true
+plotly_image: posts/plotly_band/plot.html
 ---
 
 For some time now I have been using [plotly_express.line](https://plotly.com/python-api-reference/generated/plotly.express.line)

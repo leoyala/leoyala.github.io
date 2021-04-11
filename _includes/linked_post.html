@@ -3,10 +3,17 @@
         {% assign post_url = post.url | replace: "/", "" %}
         {% if post_url == include.url %}
             <div class="linked_post_div">
+                {% if post.image And post.image != "" And post.image != nil %}
+                    <img src="{{ site.baseurl }}/assets/img/{{ post.image }}">
+                {% endif %}
+                {% if post.plotly_image And post.plotly_image != "" And post.plotly_image != nil %}
+                    {% include {{post.plotly_image}} %}
+                {% endif %}
                 <article class="post">
                     <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
                     <p style="color: #969494; margin: 10px 0px; font-size: 18px;">
                         {{ post.date | date: "%B %e, %Y" }}
+                        {{ post.excerpt }}
                     </p>
                 </article>
             </div>

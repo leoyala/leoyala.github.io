@@ -3,6 +3,7 @@
 
 @import "{{ site.theme }}";
 
+
 .linked_post_div {
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -14,4 +15,5 @@
 
 .linked_post_div h1 {
   margin-top: 0px;
+  text-align: left;
 }
