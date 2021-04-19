@@ -12,17 +12,17 @@ plotly_image: posts/dynamic_plotting/2_parallelCat.html
 ---
 
 To-REVIEW: 
-1. https://docs.bokeh.org/en/latest/docs/user_guide/data.html#userguide-data-linked-selection
-2. https://mpld3.github.io/examples/index.html
-3. https://holoviews.org/
+1. ~~https://docs.bokeh.org/en/latest/docs/user_guide/data.html#userguide-data-linked-selection~~
+2. ~~https://mpld3.github.io/examples/index.html~~
+3. ~~https://holoviews.org/~~
 
 HIGHLIGHT:
-1. plotly has cuda rapids in the core with opengl plotting options
-2. plotly has plotly express which is similar to seaborn interface
-3. Bokeh has shared data among plots which allows for interlinked interactions between plots
-4. Holoviews is built on top of bokeh 
-5. mpld3 is like interactive matplotlib
-6. plotly has dash!
+1. ~~plotly has cuda rapids in the core with opengl plotting options~~
+2. ~~plotly has plotly express which is similar to seaborn interface~~
+3. ~~Bokeh has shared data among plots which allows for interlinked interactions between plots~~
+4. ~~Holoviews is built on top of bokeh~~ 
+5. ~~mpld3 is like interactive matplotlib~~
+6. ~~plotly has dash!~~
 
 TO-TEST:
 1. plotting speed of small datasets
@@ -334,3 +334,268 @@ p.circle('x', 'y', size=20, source=source)
 show(p)
 ```
 {% include posts/dynamic_plotting/5_tooltipBokeh.html %}
+
+To finalize this section, I would like to mention that **Bokeh** has a similar functionality as Plotly in order to create
+interactive web apps to analyze data, you can take a look at [Bokeh server](https://docs.bokeh.org/en/latest/docs/user_guide/server.html) for more details.
+You will notice that the complexity and amount of work required to develop an app in such service is considerably higher
+than [Dash](https://plotly.com/dash/), I have been working with Dash for some time now, and I think it is one of the 
+most simple structures that I have used so far, making it possible to develop an application faster.
+
+<br>
+### mpld3
+
+[mpld3](https://mpld3.github.io/examples/index.html) is a library that brings together matplotlib and [D3js](https://d3js.org/).
+The later one is a JavaScript library for creating interactive data visualization in the internet. In order to use this tool
+we only need to install it with pip `pip install mpld3` and then we are ready to plot interactively. Let's take a look at
+a very simple example taken from [LinkedBrush](https://mpld3.github.io/examples/linked_brush.html). 
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
+
+import mpld3
+from mpld3 import plugins, utils
+
+
+data = load_iris()
+X = data.data
+y = data.target
+
+# dither the data for clearer plotting
+X += 0.1 * np.random.random(X.shape)
+
+fig, ax = plt.subplots(4, 4, sharex="col", sharey="row", figsize=(8, 8))
+fig.subplots_adjust(left=0.05, right=0.95, bottom=0.05, top=0.95,
+                    hspace=0.1, wspace=0.1)
+
+for i in range(4):
+    for j in range(4):
+        points = ax[3 - i, j].scatter(X[:, j], X[:, i],
+                                      c=y, s=40, alpha=0.6)
+
+# remove tick labels
+for axi in ax.flat:
+    for axis in [axi.xaxis, axi.yaxis]:
+        axis.set_major_formatter(plt.NullFormatter())
+
+# Here we connect the linked brush plugin
+plugins.connect(fig, plugins.LinkedBrush(points))
+
+mpld3.show()
+```
+
+{% include posts/dynamic_plotting/6_linkedMpld3.html %}
+
+There is a lot of customization that can be built on top of **D3js**. However, this comes at the cost of the amount of code
+that we would have to write. Most importantly, if we want to include custom _tool-tip_ functionalities, we will have to
+write the code ourselves in JavaScript. Let take a look at an example from [CustomToolTip](https://mpld3.github.io/examples/custom_plugin.html)
+
+As you can see, we are able to plot more complex types of data representations at the cost of having to implement the code 
+in JavaScript. For a more complete set of examples, take a look at [Mpld3SSamples](https://mpld3.github.io/examples/index.html#example-gallery).
+
+```python
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+import mpld3
+from mpld3 import plugins, utils
+
+
+class LinkedView(plugins.PluginBase):
+    """A simple plugin showing how multiple axes can be linked"""
+
+    JAVASCRIPT = """
+    mpld3.register_plugin("linkedview", LinkedViewPlugin);
+    LinkedViewPlugin.prototype = Object.create(mpld3.Plugin.prototype);
+    LinkedViewPlugin.prototype.constructor = LinkedViewPlugin;
+    LinkedViewPlugin.prototype.requiredProps = ["idpts", "idline", "data"];
+    LinkedViewPlugin.prototype.defaultProps = {}
+    function LinkedViewPlugin(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    LinkedViewPlugin.prototype.draw = function(){
+      var pts = mpld3.get_element(this.props.idpts);
+      var line = mpld3.get_element(this.props.idline);
+      var data = this.props.data;
+
+      function mouseover(d, i){
+        line.data = data[i];
+        line.elements().transition()
+            .attr("d", line.datafunc(line.data))
+            .style("stroke", this.style.fill);
+      }
+      pts.elements().on("mouseover", mouseover);
+    };
+    """
+
+    def __init__(self, points, line, linedata):
+        if isinstance(points, matplotlib.lines.Line2D):
+            suffix = "pts"
+        else:
+            suffix = None
+
+        self.dict_ = {"type": "linkedview",
+                      "idpts": utils.get_id(points, suffix),
+                      "idline": utils.get_id(line),
+                      "data": linedata}
+
+fig, ax = plt.subplots(2)
+
+# scatter periods and amplitudes
+np.random.seed(0)
+P = 0.2 + np.random.random(size=20)
+A = np.random.random(size=20)
+x = np.linspace(0, 10, 100)
+data = np.array([[x, Ai * np.sin(x / Pi)]
+                 for (Ai, Pi) in zip(A, P)])
+points = ax[1].scatter(P, A, c=P + A,
+                       s=200, alpha=0.5)
+ax[1].set_xlabel('Period')
+ax[1].set_ylabel('Amplitude')
+
+# create the line object
+lines = ax[0].plot(x, 0 * x, '-w', lw=3, alpha=0.5)
+ax[0].set_ylim(-1, 1)
+
+ax[0].set_title("Hover over points to see lines")
+
+# transpose line data and add plugin
+linedata = data.transpose(0, 2, 1).tolist()
+plugins.connect(fig, LinkedView(points, lines[0], linedata))
+
+mpld3.show()
+```
+{% include posts/dynamic_plotting/7_customTooltipMpld3.html %}
+
+<br>
+
+### HoloViews
+[HoloViews](https://holoviews.org/) is a tool that builds on top of `Bokeh`. In my opinion it is to Bokeh what `plotly-express`
+is to `Plotly`. To install it simple do this: `pip install holoviews`. Let's take a look at a simple scatter example taken
+from [ScatterExample](https://holoviews.org/getting_started/Introduction.html).
+
+```python
+import holoviews as hv
+import seaborn as sns
+hv.extension('bokeh')
+station_info = sns.load_dataset("fmri")
+scatter = hv.Scatter(station_info, 'timepoint', 'signal')
+scatter
+```
+
+{% include posts/dynamic_plotting/8_scatterHoloviews.html %}
+
+More involved plots can also be generated, such as the cord plot example below taken from [CordPlot](https://holoviews.org/gallery/demos/bokeh/route_chord.html#demos-bokeh-gallery-route-chord)
+Remember that to run the example below yourself, you will need to download first the sample data from Bokeh, you can do this 
+by running `bokeh.sampledata.download()`. For a more complete list of examples take a look at [SamplesHoloviews](https://holoviews.org/gallery/index.html).
+
+```python
+import holoviews as hv
+from holoviews import opts, dim
+from bokeh.sampledata.airport_routes import routes, airports
+
+hv.extension('bokeh')
+# Count the routes between Airports
+route_counts = routes.groupby(['SourceID', 'DestinationID']).Stops.count().reset_index()
+nodes = hv.Dataset(airports, 'AirportID', 'City')
+chord = hv.Chord((route_counts, nodes), ['SourceID', 'DestinationID'], ['Stops'])
+
+# Select the 20 busiest airports
+busiest = list(routes.groupby('SourceID').count().sort_values('Stops').iloc[-20:].index.values)
+busiest_airports = chord.select(AirportID=busiest, selection_mode='nodes')
+busiest_airports.opts(
+    opts.Chord(cmap='Category20', edge_color=dim('SourceID').str(), 
+               height=800, labels='City', node_color=dim('AirportID').str(), width=800))
+```
+
+{% include posts/dynamic_plotting/9_cordHoloviews.html %}
+
+<br>
+
+## Plotting speed 
+We have been talking for some time now about the different types of plots that can be achieved with each tool. It is 
+time now to take a look into their efficiency. We will be testing two approaches a) plotting speed of a small dataset 
+(~100 points) and b) plotting speed of a big dataset (~100,000 data points). Lets first load the data that we will be 
+using: 
+
+```python
+import pandas as pd
+import numpy as np
+
+x = np.random.rand(10**2)
+y = np.random.rand(10**2)
+data = dict(x=x, y=y)
+df_small = pd.DataFrame(data)
+
+x = np.random.rand(10**5)
+y = np.random.rand(10**5)
+data = dict(x=x, y=y)
+df_big = pd.DataFrame(data)
+```
+
+We will test the performance of plotting scatter visualizations of both datasets with each of the tools that have been 
+presented until now. We will use the build-in functionality `%timeit` inside of IPhyton for this purpose. Below you can
+see the results.
+
+It is important to notice here that even though mppld3 takes a small time for plotting, the call of `mpld3.show()` takes 
+a lot longer, making it even impossible to plot the big dataset. 
+
+Another important finding here is that even though plotly takes longer to plot a  big dataset (still around milliseconds).
+The dynamic interactions of the result are considerably more responsive that all the others, which is in the end what we
+are looking for. This can be due to the fact that Plotly uses **NVIDIA RAPIDS** to accelerate the plot of big datasets. 
+The take home message of this section is:
+> If you are plotting small datasets you can use any of these tools, and you will see almost no difference in performance.
+> If you want to plot big datasets, go with `plotly` whenever possible for more responsive plots.
+
+```python
+import pandas as pd
+import numpy as np
+
+import plotly_express as px
+from bokeh.plotting import figure
+import matplotlib.pyplot as plt, mpld3
+import holoviews as hv
+
+x_s = np.random.rand(10**2)
+y_s = np.random.rand(10**2)
+data = dict(x=x_s, y=y_s)
+df_small = pd.DataFrame(data)
+
+x_b = np.random.rand(10**5)
+y_b = np.random.rand(10**5)
+data = dict(x=x_b, y=y_b)
+df_big = pd.DataFrame(data)
+
+%timeit  -r 7 -n 10 px.scatter(data_frame=df_small, x="x", y="y")
+%timeit  -r 7 -n 10 px.scatter(data_frame=df_big, x="x", y="y")
+
+%timeit  -r 7 -n 10 figure(plot_width=400, plot_height=400); p.circle(x_s, y_s)
+%timeit  -r 7 -n 10 figure(plot_width=400, plot_height=400); p.circle(x_b, y_b)
+
+%timeit  -r 7 -n 10 plt.scatter(x_s, y_s)
+%timeit  -r 7 -n 10 plt.scatter(x_b, y_b)
+
+%timeit  -r 7 -n 10 hv.scatter((x_s, y_s))
+%timeit  -r 7 -n 10 hv.scatter((x_b, y_b))
+
+```
+
+```commandline
+Plotly:
+Small dataset: 27.1 ms ± 252 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+Big dataset: 196 ms ± 10.2 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+
+
+Bokeh:
+Small dataset: 3.05 ms ± 472 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+Big dataset: 89.1 ms ± 759 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+
+mpld3:
+Samll dataset: 1.32 ms ± 45.7 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+Big dataset: 3.67 ms ± 306 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+
+Holoviews:
+Samll dataset: 1.56 ms ± 870 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+Big dataset: 1.34 ms ± 265 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+```
