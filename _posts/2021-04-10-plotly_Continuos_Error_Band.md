@@ -259,7 +259,7 @@ plt.savefig("plot.png")
 ```
 We can see now that the results are very similar.
 
-![](assets/img/plotly_continuos_band/plot.png)
+![](assets/img/plotly_continuous_band/plot.png)
 {% include posts/plotly_band/plot.html %}
 
 In addition, if you have already computed the errors and are included in the dataframe as columns, you can pass this 
@@ -277,7 +277,7 @@ figure.write_html("plot_agg.html")
 figure = sns.lineplot(data=fmri, x="timepoint", y="signal", hue="region", style="event", ci="std")
 plt.savefig("plot_agg.png")
 ```
-![](assets/img/plotly_continuos_band/plot_agg.png)
+![](assets/img/plotly_continuous_band/plot_agg.png)
 {% include posts/plotly_band/plot_agg.html %}
 
 Finally, we can profile the performance of each method to see how much time it takes to plot the results using each implementation.

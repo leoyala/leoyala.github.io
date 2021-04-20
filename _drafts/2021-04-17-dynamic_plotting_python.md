@@ -1,7 +1,7 @@
 ---
 layout: post
 classes: wide
-title: "Dynamic plotting in Python (plotly, bokeh, etc.)"
+title: "Dynamic plotting in Python (plotly, bokeh, mpld3 & holoviews)"
 author: Leonardo Ayala
 date: 2021-04-17 08:00:00 -0000
 categories: plot dynamic
@@ -10,26 +10,6 @@ permalink: dynamic-plotting-python
 comments: true
 plotly_image: posts/dynamic_plotting/2_parallelCat.html
 ---
-
-To-REVIEW: 
-1. ~~https://docs.bokeh.org/en/latest/docs/user_guide/data.html#userguide-data-linked-selection~~
-2. ~~https://mpld3.github.io/examples/index.html~~
-3. ~~https://holoviews.org/~~
-
-HIGHLIGHT:
-1. ~~plotly has cuda rapids in the core with opengl plotting options~~
-2. ~~plotly has plotly express which is similar to seaborn interface~~
-3. ~~Bokeh has shared data among plots which allows for interlinked interactions between plots~~
-4. ~~Holoviews is built on top of bokeh~~ 
-5. ~~mpld3 is like interactive matplotlib~~
-6. ~~plotly has dash!~~
-
-TO-TEST:
-1. plotting speed of small datasets
-2. plotting speeds of big datasets
-3. comparison of linked interactions among plots
-4. learning curve for each platform
-5. community support / contributors
 
 Data visualization is becoming one of the most important tools when analyzing large datasets. A simplistic rendering of
 a PNG image is no longer enough. Imagine you want to plot a line plot that contains 10000 lines, you wait for 10 minutes
@@ -523,35 +503,6 @@ using:
 import pandas as pd
 import numpy as np
 
-x = np.random.rand(10**2)
-y = np.random.rand(10**2)
-data = dict(x=x, y=y)
-df_small = pd.DataFrame(data)
-
-x = np.random.rand(10**5)
-y = np.random.rand(10**5)
-data = dict(x=x, y=y)
-df_big = pd.DataFrame(data)
-```
-
-We will test the performance of plotting scatter visualizations of both datasets with each of the tools that have been 
-presented until now. We will use the build-in functionality `%timeit` inside of IPhyton for this purpose. Below you can
-see the results.
-
-It is important to notice here that even though mppld3 takes a small time for plotting, the call of `mpld3.show()` takes 
-a lot longer, making it even impossible to plot the big dataset. 
-
-Another important finding here is that even though plotly takes longer to plot a  big dataset (still around milliseconds).
-The dynamic interactions of the result are considerably more responsive that all the others, which is in the end what we
-are looking for. This can be due to the fact that Plotly uses **NVIDIA RAPIDS** to accelerate the plot of big datasets. 
-The take home message of this section is:
-> If you are plotting small datasets you can use any of these tools, and you will see almost no difference in performance.
-> If you want to plot big datasets, go with `plotly` whenever possible for more responsive plots.
-
-```python
-import pandas as pd
-import numpy as np
-
 import plotly_express as px
 from bokeh.plotting import figure
 import matplotlib.pyplot as plt, mpld3
@@ -581,6 +532,20 @@ df_big = pd.DataFrame(data)
 
 ```
 
+We will test the performance of plotting scatter visualizations of both datasets with each of the tools that have been 
+presented until now. We will use the build-in functionality `%timeit` inside of IPhyton for this purpose. Below you can
+see the results.
+
+It is important to notice here that even though mppld3 takes a small time for plotting, the call of `mpld3.show()` takes 
+a lot longer, making it even impossible to plot the big dataset. 
+
+Another important finding here is that even though plotly takes longer to plot a  big dataset (still around milliseconds).
+The dynamic interactions of the result are considerably more responsive that all the others, which is in the end what we
+are looking for. This can be due to the fact that Plotly uses **NVIDIA RAPIDS** to accelerate the plot of big datasets. 
+The take home message of this section is:
+> If you are plotting small datasets you can use any of these tools, and you will see almost no difference in performance.
+> If you want to plot big datasets, go with `plotly` whenever possible for more responsive plots.
+
 ```commandline
 Plotly:
 Small dataset: 27.1 ms ± 252 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
@@ -599,3 +564,29 @@ Holoviews:
 Samll dataset: 1.56 ms ± 870 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 Big dataset: 1.34 ms ± 265 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 ```
+
+## Learning curve
+After trying for some days each of the tools that we have reviewed in this post, I would recommend to use **Plotly** if
+you would like to learn to do dynamic plots fast. Specially, I would recommend using `plotly-express`. If you want to 
+modify how the results look like after using `plotly-express`, you can still use the`Figure.update` method to modify either
+the traces or the layout of the plot, You still have full control of the visualization after using `plotly-express`. 
+IF you need to do computations at run time for a database, you can pair `plotly-express` with `Dash` and you will get a 
+really great combination.
+
+If you require very specific controls for your visualization then I would recommend using `Bokeh` or `mpld3` just be aware
+that for those extra integrations, you will have to hardcode it in `HTML` or `JS`. 
+So my general recommendation would be:
+
+> Use `plotly-express` or `plotly-express` + `Dash` for a fast learning curve, and use `Bokeh` or `mpld3` for custom-made 
+> visualizations that can not be done with `plotly-express`.
+
+## Community support
+To finalize this post I would like to write something about community support for these tools. If we talk only about the 
+**GitHub** contributors for the specific visualization libraries that we have discussed, `Bokeh` is at the top at this 
+moment. I am not active in their support community, so I am not sure how responsive the community is. However, from a 
+first glance it looks like it is very active. 
+My experience with the `Plotly` community has been good so far, and I will probably stick with it for the time being. 
+
+Well, I hope that this has been of help to you somehow and until next time!
+
+> You are never wrong to do the right thing
