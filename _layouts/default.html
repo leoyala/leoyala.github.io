@@ -38,7 +38,16 @@
           <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
         </ul>
         {% endif %}
+
+        <h3>{{ site.data.navigation.title }}</h3>
+        <ul>
+           {% for item in site.data.navigation.pages %}
+              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+           {% endfor %}
+        </ul>
+
       </header>
+
       <section>
 
       {{ content }}
