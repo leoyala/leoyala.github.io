@@ -1,9 +1,9 @@
 ---
 layout: post
 classes: wide
-title: "Dynamic plotting in Python (plotly, bokeh, mpld3 & holoviews)"
+title: "Dynamic plotting in Python (Plotly, Bokeh, mpld3 & HoloViews)"
 author: Leonardo Ayala
-date: 2021-04-17 08:00:00 -0000
+date: 2021-04-26 08:00:00 -0000
 categories: plot dynamic
 tags: plotly bokeh dynamic python
 permalink: dynamic-plotting-python
@@ -22,10 +22,10 @@ the values of each data-point.
 
 Some topics covered in this post are:
 1. How to create dynamic plots
-2. Which tool are available for dynamic plots in python
-3. A comparison between those tool
-4. Advantages and disadvantages 
-5. Plotting large amounts of data
+2. Which frameworks are available to create dynamic plots in python?
+3. A comparison between frameworks available in Python
+4. Advantages and disadvantages for each framework
+5. Performance when plotting large amounts of data
 
 ## Dynamic plotting tools in python
 
@@ -513,22 +513,45 @@ y_s = np.random.rand(10**2)
 data = dict(x=x_s, y=y_s)
 df_small = pd.DataFrame(data)
 
-x_b = np.random.rand(10**5)
-y_b = np.random.rand(10**5)
+x_b = np.random.rand(10**6)
+y_b = np.random.rand(10**6)
 data = dict(x=x_b, y=y_b)
 df_big = pd.DataFrame(data)
 
 %timeit  -r 7 -n 10 px.scatter(data_frame=df_small, x="x", y="y")
 %timeit  -r 7 -n 10 px.scatter(data_frame=df_big, x="x", y="y")
 
-%timeit  -r 7 -n 10 figure(plot_width=400, plot_height=400); p.circle(x_s, y_s)
-%timeit  -r 7 -n 10 figure(plot_width=400, plot_height=400); p.circle(x_b, y_b)
+%timeit  -r 7 -n 10 p=figure(plot_width=400, plot_height=400); p.circle(x_s, y_s)
+%timeit  -r 7 -n 10 p=figure(plot_width=400, plot_height=400); p.circle(x_b, y_b)
 
-%timeit  -r 7 -n 10 plt.scatter(x_s, y_s)
-%timeit  -r 7 -n 10 plt.scatter(x_b, y_b)
+%timeit  -r 7 -n 10 fig=plt.scatter(x_s, y_s); mpld3.display()
+%timeit  -r 7 -n 10 fig=plt.scatter(x_b, y_b); mpld3.display()
 
-%timeit  -r 7 -n 10 hv.scatter((x_s, y_s))
-%timeit  -r 7 -n 10 hv.scatter((x_b, y_b))
+%timeit  -r 7 -n 10 fig = hv.Scatter((x_s, y_s)); hv.render(fig)
+%timeit  -r 7 -n 10 fig = hv.Scatter((x_b, y_b)); hv.render(fig)
+
+```
+
+The specifications of the computer where this code runs are showed below
+```commandline
+                          ./+o+-       -
+                  yyyyy- -yyyyyy+      OS: Ubuntu 20.04 focal
+               ://+//////-yyyyyyo      Kernel: x86_64 Linux 5.4.0-72-generic
+           .++ .:/++++++/-.+sss/`      -
+         .:++o:  /++++++++/:--:/-      -
+        o:+o+:++.`..```.-/oo+++++/     Shell: bash 5.0.17
+       .:+o:+o/.          `+sssoo+/    Resolution: 1920x1080
+  .++/+:+oo+o:`             /sssooo.   DE: GNOME 3.36.5
+ /+++//+:`oo+o               /::--:.   -
+ \+/+o+++`o++o               ++////.   -
+  .++.o+++oo+:`             /dddhhh.   -
+       .+.o+oo:.          `oddhhhh+    -
+        \+.++o+o``-````.:ohdhhhhh+     -
+         `:o+++ `ohhhhhhhhyo++os:      -
+           .o:`.syhhhhhhh/.oo++o`      CPU: Intel Core i7-8750H @ 12x 4.1GHz [56.0°C]
+               /osyyyyyyo++ooo+++/     GPU: NVIDIA GeForce GTX 1050 Ti with Max-Q Design
+                   ````` +oo+++o\:     RAM: 15655MiB
+                          `oo++.      
 
 ```
 
@@ -549,20 +572,20 @@ The take home message of this section is:
 ```commandline
 Plotly:
 Small dataset: 27.1 ms ± 252 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
-Big dataset: 196 ms ± 10.2 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+Big dataset: 1.74 s ± 71.9 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 
 
-Bokeh:
-Small dataset: 3.05 ms ± 472 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
-Big dataset: 89.1 ms ± 759 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+Bokeh (without tooltips):
+Small dataset: 3.03 ms ± 34.3 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+Big dataset: 907 ms ± 34.7 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 
 mpld3:
-Samll dataset: 1.32 ms ± 45.7 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
-Big dataset: 3.67 ms ± 306 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+Samll dataset: 117 ms ± 1.35 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+Big dataset: ~ too long
 
 Holoviews:
-Samll dataset: 1.56 ms ± 870 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
-Big dataset: 1.34 ms ± 265 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+Samll dataset: 189 ms ± 2.57 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+Big dataset: 285 ms ± 18.1 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 ```
 
 ## Learning curve
@@ -588,5 +611,3 @@ first glance it looks like it is very active.
 My experience with the `Plotly` community has been good so far, and I will probably stick with it for the time being. 
 
 Well, I hope that this has been of help to you somehow and until next time!
-
-> You are never wrong to do the right thing
