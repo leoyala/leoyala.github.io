@@ -611,3 +611,7 @@ first glance it looks like it is very active.
 My experience with the `Plotly` community has been good so far, and I will probably stick with it for the time being. 
 
 Well, I hope that this has been of help to you somehow and until next time!
+
+{% if page.comments == true and site.disqus.shortname %}
+    {% include disquss.html %}
+{% endif %}
