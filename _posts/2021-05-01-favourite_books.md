@@ -15,7 +15,7 @@ I had known them sooner. I hope that you enjoy them as uch as I did.
 
 ## General topics
 <span class="book-cover">
-<img alt="Cover" src="/assets/img/book-covers/the-book-thief.jpeg">
+<img alt="Cover" src="assets/img/book-covers/the-book-thief.jpeg">
 </span>
 <span class="book-description">
 **The book thief** _Markus Zusak (2005)_
