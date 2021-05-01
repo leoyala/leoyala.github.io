@@ -28,7 +28,7 @@ in the most terrible of times you can find hope.
 </span>
 
 <span class="book-cover">
-<img alt="Cover" src="/assets/img/book-covers/gir-woman-other.jpeg">
+<img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/gir-woman-other.jpeg">
 </span>
 <span class="book-description">
 **Girl, woman, other** _Bernardine Evaristo (2020)_
@@ -40,7 +40,7 @@ few books that I would read twice.
 </span>
 
 <span class="book-cover">
-<img alt="Cover" src="/assets/img/book-covers/invisible-women.jpeg">
+<img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/invisible-women.jpeg">
 </span>
 <span class="book-description">
 **Invisible women** _Caroline Criado Perez (2020)_
@@ -53,7 +53,7 @@ but I believe that if it has paved the way to this kind of discussion, then it h
 </span>
 
 <span class="book-cover">
-<img alt="Cover" src="/assets/img/book-covers/behave.jpeg">
+<img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/behave.jpeg">
 </span>
 <span class="book-description">
 **Behave** _Robert M. Sapolsky (2018)_
@@ -66,7 +66,7 @@ biological response of the human body that makes us do or not do something.
 
 ## Mystery & Thriller
 <span class="book-cover">
-<img alt="Cover" src="/assets/img/book-covers/the-institute.jpeg">
+<img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/the-institute.jpeg">
 </span>
 <span class="book-description">
 **The institute** _Stephen King (2019)_
@@ -79,7 +79,7 @@ the story will keep you reading.
 
 
 <span class="book-cover">
-<img alt="Cover" src="/assets/img/book-covers/doctor-sleep.jpeg">
+<img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/doctor-sleep.jpeg">
 </span>
 <span class="book-description">
 **Doctor sleep** _Stephen King (2013)_
@@ -91,7 +91,7 @@ in the cover art of the book (back cover), but no spoilers!
 </span>
 
 <span class="book-cover">
-<img alt="Cover" src="/assets/img/book-covers/the-starless-sea.jpeg">
+<img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/the-starless-sea.jpeg">
 </span>
 <span class="book-description">
 **The starless sea** _Erin Morgenstern (2020)_
@@ -104,7 +104,7 @@ book says: "_This is the home of storytellers, story-lovers and those who will p
 
 
 <span class="book-cover">
-<img alt="Cover" src="/assets/img/book-covers/the-night-circus.jpeg">
+<img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/the-night-circus.jpeg">
 </span>
 <span class="book-description">
 **The night circus** _Erin Morgenstern (2012)_
