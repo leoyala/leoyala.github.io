@@ -3,7 +3,7 @@ layout: post
 classes: wide
 title: "Plotly continuous error band lineplot"
 author: Leonardo Ayala
-date: 2021-04-09 08:00:00 -0000
+date: 2021-04-10 08:00:00 -0000
 categories: plot dynamic
 tags: plotly seaborn pandas dynamic
 permalink: plotly-error-band
