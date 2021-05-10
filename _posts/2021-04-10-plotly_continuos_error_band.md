@@ -11,13 +11,15 @@ comments: true
 plotly_image: posts/plotly_band/plot.html
 ---
 
-For some time now I have been using [plotly_express.line](https://plotly.com/python-api-reference/generated/plotly.express.line)
+<p class="first-p">
+<span class="first-word">For some</span> time I have been using [plotly_express.line](https://plotly.com/python-api-reference/generated/plotly.express.line)
 in order to generate dynamic plots. I personally think that this is a great tool that has an API very similar to the one
 from **seaborn**. Unfortunately, I missed the possibility to plot continuous error bands with plotly in the same manner that seaborn 
 does when multiple samples are present for each category.
 For this purpose I created a modules that does this computation in the same manner that seaborn does. This module actually 
 takes parts from the core of seaborn to compute the _standard deviation_ and the _confidence interval_.
 Let's get into the code to see how it's performance.
+</p>
 
 ## Code implementation in python
 

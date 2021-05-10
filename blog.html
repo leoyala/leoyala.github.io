@@ -2,30 +2,18 @@
 layout: default
 title: Blog
 ---
-<h1>Latest Posts</h1>
+<h1>Posts</h1>
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      {{ post.excerpt }}
-    </li>
-  {% endfor %}
-</ul>
+<p class="first-p">
+  <span class="first-word">This is</span> a complete list of posts. They are ordered by date, which can be seen in the
+  thumbnails of each post. Old posts appear at the bottom of the page while new posts appear at the top.
+  There is no other particular order of the posts because they appear as soon as they are created. You will find in this
+page posts covering a wide range of topics: science, books, short stories, etc.
+</p>
 
-<div class="linked_post">
-    {% for post in site.posts %}
-        {% assign post_url = post.url | replace: "/", "" %}
-        {% if post_url == include.url %}
-            <div class="linked_post_div">
-                <article class="post">
-                    <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-                    <p style="color: #969494; margin: 10px 0px; font-size: 18px;">
-                        {{ post.date | date: "%B %e, %Y" }}
-                    </p>
-                </article>
-            </div>
-        {% endif %}
-    {% endfor %}
-    <br>
-</div>
+
+{% include linked_post.html url="favourite-books" %}
+
+{% include linked_post.html url="dynamic-plotting-python" %}
+
+{% include linked_post.html url="plotly-error-band" %}

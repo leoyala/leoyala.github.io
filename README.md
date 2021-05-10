@@ -1,12 +1,14 @@
 
-## Random collection of posts
+<p class="first-p">
+  <span class="first-word">This is</span> a random collection of posts of diverse topics: data science, machine learning, deep learning, statistics, physics, etc.
+This site also contains posts of a wide range of topics that I find generally interesting and are not necessarily related
+to science: favourite books, short stories, etc.
+</p>
 
-This is a random collection of posts that I once wished had been available when I was looking for them.
->Do not expect any particular order of the posts. They will come depending on what I am interested at the time
+If you would like to take a look at a complete list of posts, follow the link to the [Blog]({{ site.baseurl }}/blog.html)
 
 {% include linked_post.html url="favourite-books" %}
 {% include linked_post.html url="dynamic-plotting-python" %}
-{% include linked_post.html url="plotly-error-band" %}
 
 ---
 <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

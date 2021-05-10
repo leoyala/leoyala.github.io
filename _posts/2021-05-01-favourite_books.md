@@ -10,8 +10,10 @@ image: book-covers/book-covers.png
 comments: true
 ---
 
-I decided to collect a list of books that I really enjoyed and that at some point I wished
-I had known them sooner. I hope that you enjoy them as uch as I did.
+<p class="first-p">
+  <span class="first-word">I decided</span> to collect a list of books that I really enjoyed and that at some point I wished
+I had known them sooner. I hope that you enjoy them as much as I did.
+</p>
 
 ## General topics
 <span class="book-cover">

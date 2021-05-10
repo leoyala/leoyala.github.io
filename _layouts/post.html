@@ -13,8 +13,7 @@ layout: default
         <img class="avatar" src="./assets/img/authors/{{ page.author }}.jpeg" alt="{{ page.author }}" width="50" height="50">
 {% endif %}
 
-
-{{content}}
+{{ content }}
 
 {% if page.tags %}
   <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
