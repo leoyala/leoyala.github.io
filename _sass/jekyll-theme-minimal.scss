@@ -281,19 +281,3 @@ footer {
     color:#444;
   }
 }
-
-:not(.post-excerpt) > .first-word {
-  color: #166079;
-  font-variant: small-caps;
-  font-weight: bold;
-}
-
-:not(.post-excerpt) > .first-p::first-letter {
-  float: left;
-  font-size: 3.15em;
-  line-height: 0.5;
-  margin: 0.159em 0.159em 0 0;
-  color: #166079;
-  font-weight: normal;
-  text-transform: uppercase;
-}

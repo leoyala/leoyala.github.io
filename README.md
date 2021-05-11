@@ -1,4 +1,6 @@
-[![Search]({{ "/assets/tipuesearch/search.png" | relative_url }})](search)
+<a href="/search">
+    <img src="{{ "/assets/tipuesearch/search.png" | relative_url }}" width=24> SEARCH
+</a>
 
 <p class="first-p">
   <span class="first-word">This is</span> a random collection of posts of diverse topics: data science, machine learning, deep learning, statistics, physics, etc.

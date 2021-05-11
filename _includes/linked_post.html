@@ -4,12 +4,16 @@
         {% if post_url == include.url %}
             <div class="linked_post_div">
                 {% if post.image And post.image != "" And post.image != nil %}
-                    <img src="{{ site.baseurl }}/assets/img/{{ post.image }}">
+                <div class="post-cover-image-container">
+                    <img src="{{ site.baseurl }}/assets/img/{{ post.image }}" class="post-cover-image">
+                </div>
                 {% endif %}
                 {% if post.plotly_image And post.plotly_image != "" And post.plotly_image != nil %}
+                <div class="post-cover-image-container">
                     {% include {{post.plotly_image}} %}
+                </div>
                 {% endif %}
-                <article class="post">
+                <article class="post, post-cover-description">
                     <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
                     <p style="color: #969494; margin: 10px 0px; font-size: 18px;">
                         {{ post.date | date: "%B %e, %Y" }}
