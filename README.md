@@ -1,4 +1,4 @@
-<a href="/search">
+<a href="{{site.baseurl}}/search">
     <img src="{{ "/assets/tipuesearch/search.png" | relative_url }}" width=24> SEARCH
 </a>
 
