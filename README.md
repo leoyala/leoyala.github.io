@@ -1,4 +1,5 @@
-{% include search.html %}
+[![Search]({{ "/assets/tipuesearch/search.png" | relative_url }})](search)
+
 <p class="first-p">
   <span class="first-word">This is</span> a random collection of posts of diverse topics: data science, machine learning, deep learning, statistics, physics, etc.
 This site also contains posts of a wide range of topics that I find generally interesting and are not necessarily related
