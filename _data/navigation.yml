@@ -1,0 +1,14 @@
+- title: Home
+  url: /
+
+- title: Posts
+  url: /blog
+  sublinks:
+    - title: data science
+      url: /blog/data-science
+    - title: dynamic plotting
+      url: /blog/dynamic-plotting
+    - title: life
+      url: /blog/life
+- title: Stories
+  url: /stories
