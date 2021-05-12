@@ -1,6 +1,3 @@
-<!-- Belongs at: /_includes/navigation.html -->
-
-<!-- This finds the current page so it can be highlighted. -->
 
 {% for entry in site.data.navigation %}
 {% capture fullurl %}{{ site.baseurl }}{{ entry.url }}{% endcapture %}
@@ -12,7 +9,7 @@
     {% endif %}
 {% endfor %}
 
-<!-- Then we build the nav bar. -->
+
 <nav>
     <ul>
     {% for entry in site.data.navigation %}

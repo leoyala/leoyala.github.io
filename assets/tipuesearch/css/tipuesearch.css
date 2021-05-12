@@ -12,19 +12,19 @@ http://www.tipue.com/search
 
 #tipue_search_input, #tipue_search_foot_boxes
 {
-     font: 300 14px/1 Roboto, sans-serif;
+     font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 #tipue_search_results_count, #tipue_search_warning, .tipue_search_content_url, .tipue_search_content_debug, .tipue_search_related_text
 {
-     font: 300 14px/1.7 Roboto, sans-serif;
+     font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .tipue_search_content_title
 {
-     font: 100 26px/1.7 Roboto, sans-serif;
+     font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .tipue_search_content_text, .tipue_search_related_title
 {
-     font: 300 15px/1.7 Roboto, sans-serif;
+     font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .tipue_search_content_bold, .tipue_search_related_bold
 {
@@ -39,9 +39,9 @@ http://www.tipue.com/search
 {
      color: #333;
      max-width: 210px;
-	padding: 17px;
+	padding: 10px;
 	border: 1px solid #e3e3e3;
-	border-radius: 0;
+	border-radius: 10px;
 	-moz-appearance: none;
 	-webkit-appearance: none;
      box-shadow: none; 
