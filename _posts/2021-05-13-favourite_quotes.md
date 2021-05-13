@@ -13,7 +13,7 @@ comments: true
 <p class="first-p">
   <span class="first-word">Quotes are</span> usually something that speaks to everyone in one way or another. I have 
 collected the quotes that I have read over the years and that speak to me in a profound manner. I try to live by some 
-of this quotes, not always succeeding but always trying, because in the end that is all we do, to try.
+of these quotes, not always succeeding but always trying, because in the end that is all we do, to try.
 </p>
 
 <div class="blockquote-wrapper">
