@@ -43,6 +43,29 @@ few books that I would read twice.
 </span>
 
 <span class="book-cover">
+<img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/my-sister-s-keeper.jpg">
+</span>
+<span class="book-description">
+**My sister's keeper** _Jodi Picoult (2004)_
+<br>
+This is the story of a family facing a great challenge. The story surrounds two sisters, Kate faces a rare illness that 
+has a very low survival rate, and Kate who has undergone several medical treatments to help her sister. 
+However, Anna's willingness to help might cost her a lot more than she is willing to give up in her life. The book tells 
+the story of this family, seen from several perspectives, but all leading to a similar conclusion: _there is no right answer._
+</span>
+
+<span class="book-cover">
+<img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/a-long-way-down.jpg">
+</span>
+<span class="book-description">
+**A long way down** _Nick Hornby (2005)_
+<br>
+On New Year's Eve, four people meet at the top of a skyscraper in New York. The events that lead to them coming here are 
+very different, but one thing is clear to all of them, they all came here to commit suicide. This novel by Nick Hornby 
+contains a lot more comedy than I would have expected and the story unravels quite fast, making it very interesting.
+</span>
+
+<span class="book-cover">
 <img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/invisible-women.jpeg">
 </span>
 <span class="book-description">

@@ -19,6 +19,17 @@ of these quotes, not always succeeding but always trying, because in the end tha
 <div class="blockquote-wrapper">
   <div class="blockquote-styled">
     <h1>
+     Most of the <span style="color:#ffffff">evil</span> in this world is <span style="color:#ffffff">done by people</span> with good intentions.
+     </h1>
+    <h4>&mdash;T.S. Eliot</h4>
+  </div>
+</div>
+
+<br>
+
+<div class="blockquote-wrapper">
+  <div class="blockquote-styled">
+    <h1>
      You are never <span style="color:#ffffff">wrong</span> to do the <span style="color:#ffffff">right thing.</span>
      </h1>
     <h4>&mdash;Mark Twain<br><em>The autobiography of Mark Twain</em></h4>
@@ -86,9 +97,42 @@ of these quotes, not always succeeding but always trying, because in the end tha
 <div class="blockquote-wrapper">
   <div class="blockquote-styled">
     <h1>
-     We accept the <span style="color:#ffffff">love</span> we think <span style="color:#ffffff">we deserve.</span> in the world.
+     We accept the <span style="color:#ffffff">love</span> we think <span style="color:#ffffff">we deserve.</span>
      </h1>
-    <h4>&mdash;Stephen Chbosky <em> The perks of being a Wallflower</em></h4>
+    <h4>&mdash;Stephen Chbosky <br><em>The perks of being a Wallflower</em></h4>
+  </div>
+</div>
+
+<br>
+
+<div class="blockquote-wrapper">
+  <div class="blockquote-styled">
+    <h1>
+     To be yourself in a <span style="color:#ffffff">world that</span> is constantly trying to make you <span style="color:#ffffff">something else</span> is the greatest accomplishment.
+     </h1>
+    <h4>&mdash;Ralph Waldo Emerson</h4>
+  </div>
+</div>
+
+<br>
+
+<div class="blockquote-wrapper">
+  <div class="blockquote-styled">
+    <h1>
+     You can't <span style="color:#ffffff">find someone</span> who doesn't want to be <span style="color:#ffffff">found.</span>
+     </h1>
+    <h4>&mdash;Isabel Allende <br><em>The house of the spirits</em></h4>
+  </div>
+</div>
+
+<br>
+
+<div class="blockquote-wrapper">
+  <div class="blockquote-styled">
+    <h1>
+     <span style="color:#ffffff">Fear is inevitable,</span> I have to accept that, but I cannot allow it to <span style="color:#ffffff">paralyze me.</span>
+     </h1>
+    <h4>&mdash;Isabel Allende <br><em>The Sum of Our Days: A Memoir</em></h4>
   </div>
 </div>
 
