@@ -8,6 +8,7 @@ tags: books
 permalink: favourite-books
 image: book-covers/book-covers.png
 comments: true
+include_toc: true
 ---
 
 <p class="first-p">

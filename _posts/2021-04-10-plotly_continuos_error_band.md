@@ -9,6 +9,7 @@ tags: plotly seaborn pandas dynamic
 permalink: plotly-error-band
 comments: true
 plotly_image: posts/plotly_band/plot.html
+include_toc: true
 ---
 
 <p class="first-p">

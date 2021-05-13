@@ -8,8 +8,7 @@ This site also contains posts of a wide range of topics that I find generally in
 to science: favourite books, short stories, etc.
 </p>
 
-If you would like to take a look at a complete list of posts, follow the link to the [Blog]({{ site.baseurl }}/blog.html)
-
+{% include linked_post.html url="quotes" %}
 {% include linked_post.html url="favourite-books" %}
 {% include linked_post.html url="dynamic-plotting-python" %}
 

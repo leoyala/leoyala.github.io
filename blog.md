@@ -2,7 +2,7 @@
 layout: default
 title: Blog
 ---
-<h1>Posts</h1>
+#Posts
 
 <p class="first-p">
   <span class="first-word">This is</span> a complete list of posts. They are ordered by date, which can be seen in the
@@ -11,9 +11,11 @@ title: Blog
 page posts covering a wide range of topics: science, books, short stories, etc.
 </p>
 
-
+##Life
 {% include linked_post.html url="favourite-books" %}
 
+
+##Dynamic data visualization
 {% include linked_post.html url="dynamic-plotting-python" %}
 
 {% include linked_post.html url="plotly-error-band" %}

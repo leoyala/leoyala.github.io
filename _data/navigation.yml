@@ -4,11 +4,11 @@
 - title: Posts
   url: /blog
   sublinks:
-    - title: data science
-      url: /blog/data-science
-    - title: dynamic plotting
-      url: /blog/dynamic-plotting
-    - title: life
+    - title: Dynamic data visualization
+      url: /blog/dynamic-data-visualization
+    - title: Life
       url: /blog/life
 - title: Stories
   url: /stories
+- title: Quotes
+  url: /quotes

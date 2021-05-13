@@ -9,6 +9,7 @@ tags: plotly bokeh dynamic python
 permalink: dynamic-plotting-python
 comments: true
 plotly_image: posts/dynamic_plotting/2_parallelCat.html
+include_toc: true
 ---
 
 <p class="first-p">
