@@ -258,6 +258,27 @@ footer {
   pre, code {
     word-wrap:normal;
   }
+
+  span.book-cover {
+  display: inline-block;
+  width: 15%;
+  padding: 5px;
+  float: left;
+  }
+
+  span.book-cover img{
+    border-radius: 10%;
+    display: inline-block;
+
+  }
+
+  span.book-description {
+    display: inline-block;
+    text-align: justify;
+    padding: 5px;
+    width: 80%;
+    vertical-align: top;
+  }
 }
 
 @media print, screen and (max-width: 480px) {
@@ -271,6 +292,26 @@ footer {
 
   .downloads li, .downloads li + li + li {
     width:33%;
+  }
+
+  span.book-cover {
+  display: inline-block;
+  width: 15%;
+  padding: 5px;
+  }
+
+  span.book-cover img{
+    border-radius: 10%;
+    display: inline-block;
+    float: left;
+  }
+
+  span.book-description {
+    display: inline-block;
+    text-align: justify;
+    padding: 5px;
+    width: 70%;
+    vertical-align: top;
   }
 }
 
