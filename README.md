@@ -7,7 +7,7 @@
 This site also contains posts of a wide range of topics that I find generally interesting and are not necessarily related
 to science: favourite books, short stories, etc.
 </p>
-## Current donation projects
+## Donation projects
 
 <div>
 <!-- START Code -->

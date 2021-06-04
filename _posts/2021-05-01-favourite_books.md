@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My favourite books"
+title: "Favourite books"
 author: Leonardo Ayala
 date: 2021-05-01 08:00:00 -0000
 categories: books
@@ -16,6 +16,20 @@ include_toc: true
 I had known them sooner. I hope that you enjoy them as much as I did.
 </p>
 
+## Psychology
+
+<span class="book-cover">
+<img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/behave.jpeg">
+</span>
+<span class="book-description">
+**Behave** _Robert M. Sapolsky (2018)_
+<br>
+If you are someone that enjoys reading about why people do what they do and the science behind it, then you will definitely
+like this book. I have to admit that it cna get very technical in some parts, but it is generally in parts that are more 
+or less optional. This books tries to address the general question of "**Why do we do what we do?**", going through the
+biological response of the human body that makes us do or not do something.
+</span>
+
 ## General topics
 <span class="book-cover">
 <img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/the-book-thief.jpeg">
@@ -28,6 +42,19 @@ a thread (1939). Even though Liesel parents have been taken to a concentration c
 adopted her as her own daughter. Meanwhile, Liesel struggles to something in her life to hang on to. This is how she 
 starts stealing books and learning to read by writing in the walls of the basement. This is her story, the story of how
 in the most terrible of times you can find hope.
+</span>
+
+<span class="book-cover">
+<img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/invisible-women.jpeg">
+</span>
+<span class="book-description">
+**Invisible women** _Caroline Criado Perez (2020)_
+<br>
+As a man reading this book, I have to admit that after reading it I realized that I might have a lot more prejudices in my head that I am proud to admit. This 
+book covers a wide range of topics including government policies, medical research, workplace, social media, etc. It brings
+across a large amount of case studies and stories that illustrate how in many cases women have been forgotten in a world
+where they play such a big role. This books seems for some to be a controversial,
+but I believe that if it has paved the way to this kind of discussion, then it has achieved the purpose for what it was written.
 </span>
 
 <span class="book-cover">
@@ -65,32 +92,20 @@ very different, but one thing is clear to all of them, they all came here to com
 contains a lot more comedy than I would have expected and the story unravels quite fast, making it very interesting.
 </span>
 
-<span class="book-cover">
-<img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/invisible-women.jpeg">
-</span>
-<span class="book-description">
-**Invisible women** _Caroline Criado Perez (2020)_
-<br>
-As a man reading this book, I have to admit that after reading it I realized that I might have a lot more prejudices in my head that I am proud to admit. This 
-book covers a wide range of topics including government policies, medical research, workplace, social media, etc. It brings
-across a large amount of case studies and stories that illustrate how in many cases women have been forgotten in a world
-where they play such a big role. This books seems for some to be a controversial,
-but I believe that if it has paved the way to this kind of discussion, then it has achieved the purpose for what it was written.
-</span>
-
-<span class="book-cover">
-<img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/behave.jpeg">
-</span>
-<span class="book-description">
-**Behave** _Robert M. Sapolsky (2018)_
-<br>
-If you are someone that enjoys reading about why people do what they do and the science behind it, then you will definitely
-like this book. I have to admit that it cna get very technical in some parts, but it is generally in parts that are more 
-or less optional. This books tries to address the general question of "**Why do we do what we do?**", going through the
-biological response of the human body that makes us do or not do something.
-</span>
-
 ## Mystery & Thriller
+
+<span class="book-cover">
+<img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/imaginary-friend.jpeg">
+</span>
+<span class="book-description">
+**Imaginary Friend** _Stephen Chbosky (2019)_
+<br>
+Probably one of the few books I have read completely in under one week. The story really gets you within the first chapters. 
+It starts with the disappearance of a small kids in the woods around a small town. Nobody can find him and just as everyone 
+was giving up on him, he appears with not even a scratch on him. He can not remember anything from the days he was lost in the woods.
+All he can remember is being helped by "the good man". 
+</span>
+
 <span class="book-cover">
 <img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/the-institute.jpeg">
 </span>
@@ -141,6 +156,20 @@ a warning. It simply appears from one day to the other, and just as it arrived, 
 But the means of travel of this circus is by far the least wonder of this story, what truly amazed me was what was 
 happening behind the scenes. A secret "battle" between two people that have never met, and yet they are determined to be
 the last one standing.
+</span>
+
+<span class="book-cover">
+<img alt="Cover" src="{{ site.baseurl }}/assets/img/book-covers/hodges.jpeg">
+</span>
+<span class="book-description">
+**Mr. Mercedes / Finders Keepers / End of Watch** _Stephen King(2014-2016)_
+<br>
+This is an amazing series of 3 books. The story in the third book is connected to the third one but it is not connected 
+to the second one, although the same trio of "detectives" features on each book. The first book starts with a maniac that
+kills a lot of people with a car. Hodges is the detective in charge of that case but has to retire before being able to solve it. 
+But the killer is not done yet, not by far. The second book jumps to another story related to a bunch of books that have been stolen 
+by a mad man from a famous and reclusive writer. The third book continues the story from the first one. Where the same killer is
+now back but with some peculiar and very dangerous brand new abilities. 
 </span>
 
 {% if page.comments == true and site.disqus.shortname %}
