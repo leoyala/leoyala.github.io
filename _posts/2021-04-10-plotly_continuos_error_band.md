@@ -239,7 +239,27 @@ def aggregate(vals, grouper, estimator="mean", ci="sd", n_boot=1000, seed=None, 
 
 At the end of our `line` method we iterate over the data in the generated plotly figure in order to get the trace names, 
 and the line color, such that the error bans have the same color but with a different transparency. To transform the colors
-we convert the hex color-code defined by plotly to RGBA.
+we convert the hex color-code defined by plotly to RGBA. First we get the data corresponding to each trace, and then we 
+compute the color.
+
+```python
+def get_subdata(df: pd.DataFrame, categories: list):
+    if isinstance(categories, str):
+        categories = [categories]
+    for cat in categories:
+        col = df.columns[df.isin([cat]).any()]
+        if len(col) != 1:
+            raise ValueError(f"Can not infer column name from categorical value {cat}, Two columns should not have "
+                             f"the same element in both columns for column name inference to succeed")
+        else:
+            col = col[0]
+        tmp_df = df[df[col] == cat]
+        categories.remove(cat)
+        if not categories:
+            return tmp_df
+        else:
+            return get_subdata(tmp_df, categories)
+```
 
 ```python
 def hex_to_rgba(color: str, transparency=0.2):
