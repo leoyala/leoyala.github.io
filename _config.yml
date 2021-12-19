@@ -1,9 +1,9 @@
 theme: jekyll-theme-minimal
 
-title: LEOs'
-logo: /assets/img/logo.png
+title: Whispers
+logo: /assets/img/logo2.png
 description: A collection of posts related to data science, physics, machine learning, etc.
-show_downloads: true
+show_downloads: False
 class: wide
 defaults:
   # _posts
