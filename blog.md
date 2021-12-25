@@ -11,6 +11,9 @@ title: Blog
 page posts covering a wide range of topics: science, books, short stories, etc.
 </p>
 
+## Computer Science
+{% include linked_post.html url="monte-carlo-approximations1" %}
+
 ## Life
 {% include linked_post.html url="favourite-books" %}
 
