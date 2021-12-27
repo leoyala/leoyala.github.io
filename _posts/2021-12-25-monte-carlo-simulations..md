@@ -429,6 +429,15 @@ plt.show()
 
 *Photon paths computed with Monte Carlo over several runs.*
 
+If we then simulate many photons, we can create a heatmat with the distribution of paths that the photons take inside 
+the media, as depicted in the animation.
+
+{:refdef: style="text-align: center;"}
+![](assets/img/monte_carlo/7.gif)
+{:refdef}
+
+*Photon path distribution after simulating multiple photon trajectories*
+
 # Conclusions
 We have explored several examples of where Monte Carlo approximations are used. Several of the code examples shown here
 are not optimized for *run-time*, so any attempts to re-use this code should consider also different strategies for 
