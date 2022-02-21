@@ -15,6 +15,7 @@ to science: favourite books, short stories, etc.
 <!-- ENDE Code -->
 </div>
 
+{% include linked_post.html url="the-way-we-sleep" %}
 {% include linked_post.html url="monte-carlo-approximations1" %}
 {% include linked_post.html url="quotes" %}
 {% include linked_post.html url="favourite-books" %}

@@ -15,6 +15,7 @@ page posts covering a wide range of topics: science, books, short stories, etc.
 {% include linked_post.html url="monte-carlo-approximations1" %}
 
 ## Life
+{% include linked_post.html url="the-way-we-sleep" %}
 {% include linked_post.html url="favourite-books" %}
 
 
