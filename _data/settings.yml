@@ -15,7 +15,7 @@ menu__settings:
     - title: 'Blog'
       url: '/blog/'
     - title: 'Authors'
-      url: '/authors/'
+      url: '/authors'
     - title: 'Videos'
       url: '/videos/'
     - title: 'Pages'
