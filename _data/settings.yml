@@ -1,0 +1,136 @@
+#-------------------------------
+# Site Settings
+title: Whispers
+logo: /assets/img/whispers-logo-large.svg # You can add own logo. For example '/images/logo.png'.
+description: Whispers is a blog containing a wide range of topics from data science to a list of recommended books.
+color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
+
+
+#-------------------------------
+# Navigation Settings
+menu__settings:
+  menu__items:
+    - title: 'Home'
+      url: '/'
+    - title: 'Blog'
+      url: '/blog/'
+    - title: 'Authors'
+      url: '/authors/'
+    - title: 'Videos'
+      url: '/videos/'
+    - title: 'Pages'
+      submenu:
+      - url: '/about/'
+        title: 'About'
+      - url: '/contact/'
+        title: 'Contact'
+
+
+
+#-------------------------------
+# Hero Settings
+hero:
+  enable: true
+  hero__title: Ideas, tutorials and alpacas.
+  hero__description: Don't be afraid of change, we were never meant to be the same people we were yesterday. Change burns down our arrogance to its root, don't fear eat, embrace it.
+  hero__image: /assets/img/banners/joakim-honkasalo-GZa4QFmv0Zg-unsplash.jpg # You can add hero image. For example '/images/06.jpg'
+
+
+#-------------------------------
+# Author Global Settings
+author:
+  author__name: Leonardo Ayala
+  author__bio: I am just just human. I am, among other  things, a scientist attemting to communicate science at different levels. My purpose is to spread the little knowledge that I have acquired and the one that is to come.
+  author__avatar: /assets/img/authors/Leonardo Ayala.jpeg
+
+
+#-------------------------------
+# Blog Section Settings
+blog__settings:
+  enable: true
+  blog__title: Latest Posts
+  blog__description:
+
+
+#-------------------------------
+# Videos Section Settings
+videos__settings:
+  enable: true
+  videos__title: Latest Videos
+  videos__description:
+
+
+#-------------------------------
+# Tag Section Settings
+tag__settings:
+  enable: true
+  tag: python # To display the tag section, specify your favorite tag.
+
+
+#-------------------------------
+# Author Section Settings
+author__section:
+  enable: true
+  author__section__title: Hi!, It's me, Leo. I am a scientist and alpaca enthusiast.
+  author__section__description: I am just someone attempting to spread something useful into the world, for anyone to pick it up, if they wish to. I am particularly interested in science communication and outreach.
+  aurhor__section__button__text: More About Me
+  aurhor__section__button__link: /about
+  author__section__big__image: /assets/img/authors/Leonardo Ayala3.jpg
+  author__section__small__image: /assets/img/authors/Leonardo Ayala2.jpg
+
+
+# #-------------------------------
+# # Newsletter Settings
+# mailchimp__settings:
+#   enable: true
+#   mailchimp__title: Get interesting news
+#   mailchimp__description: Subscribe to our newsletter and we’ll send you the emails of latest posts.
+#   mailchimp__identifier: frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3 # Add your MailChimp form identifier. For example - frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3
+#   mailchimp__input__text: Your email address
+#   mailchimp__button__text: Subscribe
+#   mailchimp__background__image: /images/subscribe-bg.jpg
+
+
+#-------------------------------
+# Footer Settings
+footer__description: Don't be afraid of change, we were never meant to be the same people we were yesterday. Change burns down our arrogance to its root, don't fear eat, embrace it.
+
+
+# Social Links
+social:
+- {icon: "twitter", link: "https://twitter.com/leo_ayala01"}
+
+
+# Example of adding a new link to the footer - {icon: "instagram", link: "https://instagram.com"}
+# Other icons can be found at https://ionicons.com/v4/
+
+
+# Footer Navigation
+footer__menu__settings:
+  menu__items:
+    - title: 'Home'
+      url: '/'
+    - title: 'About'
+      url: '/about/'
+    - title: 'Contact'
+      url: '/contact/'
+
+
+#-------------------------------
+# Contact Settings
+contact:
+  email: leonardo.a027@gmail.com # Add your form_id
+  description: Thanks for visiting my site, you can use this form to contact me if you want to work together in a cool project or post, or if you just want to chat. I normally check this messages once a week, so please bare in mind that I am not ignoring your message ;). # Add a description of your form
+
+# NOTE
+# Mria theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
+
+
+#-------------------------------
+# Comment Section (Disqus)
+# disqus-identifier: anvod-studio-test # Add your shortname for Disqus Comment. For example anvodstudio-demo
+
+
+#-------------------------------
+# Google Analytics
+# google-analytics: # Add your GA Tracking Id

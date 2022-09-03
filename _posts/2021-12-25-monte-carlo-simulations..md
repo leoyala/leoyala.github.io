@@ -2,20 +2,19 @@
 layout: post
 classes: wide
 title: "Monte Carlo approximations"
-author: Leonardo Ayala
+author: leo
 date: 2021-12-25 08:00:00 -0000
 categories: MonteCarlo simulations
 tags: MonteCarlo simulations python physics LightTransport
 permalink: monte-carlo-approximations1
 comments: true
-image: monte_carlo/cover.png
-include_toc: true
+image: /assets/img/monte_carlo/julien-tromeur-EOSHmMbjT8g-unsplash.jpg
+featured: true
 ---
-<p class="first-p">
-<span class="first-word">Monte Carlo</span> methods is a general term of algorithms that leverage sampling strategies 
+
+Monte Carlo methods is a general term of algorithms that leverage sampling strategies 
 to approximate solution to problems that might be too computationally expensive to solve analytically. The main idea is 
 to use randomness to solve problems that might, in principle, be deterministic. 
-</p>
 
 Monte Carlo methods have been used, for a long time, in several applications in physics-related problems such as Fluid Dynamics, 
 Disordered Materials, Strongly Coupled Solids, Cellular Structures, etc. Other applications include calculations of 

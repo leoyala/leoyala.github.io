@@ -2,18 +2,16 @@
 layout: post
 classes: wide
 title: "Dynamic plotting in Python (Plotly, Bokeh, mpld3 & HoloViews)"
-author: Leonardo Ayala
+author: leo
 date: 2021-04-26 08:00:00 -0000
 categories: plot dynamic
 tags: plotly bokeh dynamic python
 permalink: dynamic-plotting-python
-comments: true
-plotly_image: posts/dynamic_plotting/2_parallelCat.html
-include_toc: true
+image: /assets/img/dynamic_plotting/fabio-oyXis2kALVg-unsplash.jpg
+featured: true
 ---
 
-<p class="first-p">
-<span class="first-word">Data visualization</span> is becoming one of the most important tools when analyzing large datasets. A simplistic rendering of
+Data visualization is becoming one of the most important tools when analyzing large datasets. A simplistic rendering of
 a PNG image is no longer enough. Imagine you want to plot a line plot that contains 10000 lines, you wait for 10 minutes
 for the result, and you realize that the ranges are not the best choice, or you would like to have some 
 transparency in the lines, or it would be better to hide some traces, etc. etc. All of this usually involves re-plotting 
@@ -21,7 +19,6 @@ the entire dataset. As you might have already experienced, this process becomes 
 dynamic plotting comes into place, when you create a dynamic plot you are able to modify the range of each axis after 
 plotting, you can hide specific components in order to highlight part of your plot, you are even able to look at 
 the values of each data-point. 
-</p>
 
 Some topics covered in this post are:
 1. How to create dynamic plots in Python3
@@ -614,7 +611,3 @@ first glance it looks like it is very active.
 My experience with the `Plotly` community has been good so far, and I will probably stick with it for the time being. 
 
 Well, I hope that this has been of help to you somehow and until next time!
-
-{% if page.comments == true and site.disqus.shortname %}
-    {% include disquss.html %}
-{% endif %}

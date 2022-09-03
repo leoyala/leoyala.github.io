@@ -2,22 +2,19 @@
 layout: post
 classes: wide
 title: "The way we sleep"
-author: Leonardo Ayala
+author: leo
 date: 2022-02-21 08:00:00 -0000
 categories: sleep
 tags: sleep circadian REM NREM sleeping-tips
 permalink: the-way-we-sleep
 comments: true
-image: how_we_sleep/3.png
-include_toc: true
+image: /assets/img/how_we_sleep/tim-de-pauw-SBYsc1gsA-M-unsplash.jpg
+featured: true
 ---
 
-<p class="first-p">
-<span class="first-word">If I go to sleep now, I will get six hours of sleep ...</span>. Expressions like this are all to
-common, and lead to one of the most self-destructive behaviours that societies around the world have accepted and
-embraced for too long. In this post I would like to talk about sleep, why we do it, how we do it, and the consequences
+If I go to sleep now, I will get six hours of sleep ... Expressions like this are all to
+common, and lead to one of the most self-destructive behaviours that societies around the world have accepted and embraced for too long. In this post I would like to talk about sleep, why we do it, how we do it, and the consequences
 of doing it wrong.
-</p>
 I hope that at the end of this text I could have change your mind about your sleep pattern, or at least
 made you want to discuss it. If you already know that you have problems sleeping, have read information on it and are only
 looking for tips on how to improve your sleep, feel free to jump to the section [12 sleeping tips](the-way-we-sleep#12-sleeping-tips).

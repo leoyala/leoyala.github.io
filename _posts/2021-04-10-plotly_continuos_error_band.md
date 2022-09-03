@@ -2,25 +2,20 @@
 layout: post
 classes: wide
 title: "Plotly continuous error band lineplot"
-author: Leonardo Ayala
+author: leo
 date: 2021-04-10 08:00:00 -0000
 categories: plot dynamic
 tags: plotly seaborn pandas dynamic
 permalink: plotly-error-band
-comments: true
-plotly_image: posts/plotly_band/plot.html
-include_toc: true
+image: /assets/img/plotly_continuous_band/hunter-harritt-Ype9sdOPdYc-unsplash.jpg
 ---
 
-<p class="first-p">
-<span class="first-word">For some</span> time I have been using [plotly_express.line](https://plotly.com/python-api-reference/generated/plotly.express.line)
-in order to generate dynamic plots. I personally think that this is a great tool that has an API very similar to the one
+For some time I have been using [plotly_express.line](https://plotly.com/python-api-reference/generated/plotly.express.line) in order to generate dynamic plots. I personally think that this is a great tool that has an API very similar to the one
 from **seaborn**. Unfortunately, I missed the possibility to plot continuous error bands with plotly in the same manner that seaborn 
 does when multiple samples are present for each category.
 For this purpose I created a modules that does this computation in the same manner that seaborn does. This module actually 
 takes parts from the core of seaborn to compute the _standard deviation_ and the _confidence interval_.
 Let's get into the code to see how it's performance.
-</p>
 
 ## Code implementation in python
 
@@ -321,7 +316,3 @@ custom lineplot (sec): 0.18508239000038884
 plotly lineplot (sec): 0.03941967600076168
 seaborn lineplot (sec): 0.06663737300004868
 ```
-
-{% if page.comments == true and site.disqus.shortname %}
-    {% include disquss.html %}
-{% endif %}
