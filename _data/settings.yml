@@ -1,7 +1,7 @@
 #-------------------------------
 # Site Settings
 title: Whispers
-logo: /assets/img/whispers-logo-large.svg # You can add own logo. For example '/images/logo.png'.
+logo: /assets/img/whispers-logo-large.png # You can add own logo. For example '/images/logo.png'.
 description: Whispers is a blog containing a wide range of topics from data science to a list of recommended books.
 color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
 
