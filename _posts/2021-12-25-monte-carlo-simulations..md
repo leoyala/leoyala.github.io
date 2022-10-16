@@ -6,8 +6,8 @@ author: leo
 date: 2021-12-25 08:00:00 -0000
 categories: MonteCarlo simulations
 tags: MonteCarlo simulations python physics LightTransport
+tags_color: '#a149cb'
 permalink: monte-carlo-approximations1
-comments: true
 image: /assets/img/monte_carlo/julien-tromeur-EOSHmMbjT8g-unsplash.jpg
 featured: true
 ---

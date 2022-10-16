@@ -6,8 +6,8 @@ author: leo
 date: 2022-02-21 08:00:00 -0000
 categories: sleep
 tags: sleep circadian REM NREM sleeping-tips
+tags_color: '#3a9cc5'
 permalink: the-way-we-sleep
-comments: true
 image: /assets/img/how_we_sleep/tim-de-pauw-SBYsc1gsA-M-unsplash.jpg
 featured: true
 ---

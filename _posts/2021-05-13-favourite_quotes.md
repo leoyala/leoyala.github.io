@@ -5,9 +5,9 @@ author: leo
 date: 2021-05-13 08:00:00 -0000
 categories: quotes
 tags: quotes
+tags_color: '#618770'
 permalink: quotes
 image: /assets/img/quotes/quotes.png
-comments: true
 ---
 
 Quotes are usually something that speaks to everyone in one way or another. I have 

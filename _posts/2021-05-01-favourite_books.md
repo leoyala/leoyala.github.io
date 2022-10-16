@@ -5,9 +5,9 @@ author: leo
 date: 2021-05-01 08:00:00 -0000
 categories: books
 tags: books
+tags_color: '#d26bb9'
 permalink: favourite-books
 image: /assets/img/book-covers/book-covers.png
-comments: true
 featured: true
 ---
 

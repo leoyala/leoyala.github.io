@@ -6,6 +6,7 @@ author: leo
 date: 2021-04-26 08:00:00 -0000
 categories: plot dynamic
 tags: plotly bokeh dynamic python
+tags_color: '#4c49cb'
 permalink: dynamic-plotting-python
 image: /assets/img/dynamic_plotting/fabio-oyXis2kALVg-unsplash.jpg
 featured: true

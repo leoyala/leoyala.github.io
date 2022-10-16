@@ -6,6 +6,7 @@ author: leo
 date: 2021-04-10 08:00:00 -0000
 categories: plot dynamic
 tags: plotly seaborn pandas dynamic
+tags_color: '#ca622c'
 permalink: plotly-error-band
 image: /assets/img/plotly_continuous_band/hunter-harritt-Ype9sdOPdYc-unsplash.jpg
 ---
