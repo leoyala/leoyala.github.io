@@ -9,5 +9,6 @@ tags: career PhD academia
 tags_color: '#618770'
 permalink: research-life
 featured: false
-video_embed: https://www.youtube.com/watch?v=iKtB4KAKLr0
+video_embed: https://www.youtube.com/embed/iKtB4KAKLr0
+image: /assets/img/research_life/interview-thumbnail.jpg
 ---
