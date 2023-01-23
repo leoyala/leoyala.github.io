@@ -8,7 +8,7 @@ tags: books
 tags_color: '#d26bb9'
 permalink: favourite-books
 image: /assets/img/book-covers/book-covers.png
-featured: true
+featured: false
 ---
 
 This is a collection of books that I really enjoyed and that at some point I wished

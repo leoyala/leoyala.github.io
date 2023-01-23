@@ -9,7 +9,7 @@ tags: plotly bokeh dynamic python
 tags_color: '#4c49cb'
 permalink: dynamic-plotting-python
 image: /assets/img/dynamic_plotting/fabio-oyXis2kALVg-unsplash.jpg
-featured: true
+featured: false
 ---
 
 Data visualization is becoming one of the most important tools when analyzing large datasets. A simplistic rendering of
