@@ -9,7 +9,7 @@ tags: sleep circadian REM NREM sleeping-tips
 tags_color: '#3a9cc5'
 permalink: the-way-we-sleep
 image: /assets/img/how_we_sleep/tim-de-pauw-SBYsc1gsA-M-unsplash.jpg
-featured: true
+featured: false
 ---
 
 If I go to sleep now, I will get six hours of sleep ... Expressions like this are all to
