@@ -24,6 +24,8 @@ menu__settings:
         title: 'About'
       - url: '/contact/'
         title: 'Contact'
+      - url: '/privacy/'
+        title: 'Privacy notice'
 
 
 
@@ -114,6 +116,10 @@ footer__menu__settings:
       url: '/about/'
     - title: 'Contact'
       url: '/contact/'
+    - title: 'Privacy notice'
+      url: '/privacy/'
+    - title: 'Cookies notice'
+      url: '/cookies/'
 
 
 #-------------------------------
