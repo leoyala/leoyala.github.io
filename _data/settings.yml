@@ -31,7 +31,7 @@ menu__settings:
 # Hero Settings
 hero:
   enable: true
-  hero__title: Ideas, tutorials and alpacas.
+  hero__title: Ideas, tutorials and everything else I wish I knew before.
   hero__description: Don't be afraid of change, we were never meant to be the same people we were yesterday. Change burns down our arrogance to its root, don't fear eat, embrace it.
   hero__image: #/assets/img/banners/joakim-honkasalo-GZa4QFmv0Zg-unsplash.jpg # You can add hero image. For example '/images/06.jpg'
 
