@@ -17,16 +17,16 @@
                     {% for social in site.data.settings.social %}
                     <li class="social__item">
                       <a class="social__link" href="{{social.link}}" target="_blank" rel="noopener"
-                        aria-label="{{social.icon | capitalize}} link"><i class="ion ion-logo-{{social.icon}}"></i></a>
+                        aria-label="{{social.icon | capitalize}} link"><i class="{{social.icon}}"></i></a>
                     </li>
                     {% endfor %}
                   </ul>
                 </div>
                 {% endif %}
-    
+
               </div>
             </div>
-    
+
             <div class="col col-6 col-d-12">
               <div class="widget-footer widget-recent-posts">
                 <h3 class="widget-recent-posts__title">Recent posts</h3>
@@ -48,7 +48,7 @@
                     <h4 class="recent-posts__title"><a href="{{ post.url }}">{{ post.title }}</a></h4>
                     <div class="article__meta">
                       {% assign author = site.authors | where: 'username', post.author | first %}
-    
+
                       {% if author %}
                       <a href="{{ author.url }}" class="article__author__image">
                         <img class="lazy" data-src="{{ author.image }}" alt="{{ author.name }}">
@@ -58,7 +58,7 @@
                         <img class="lazy" data-src="{{site.data.settings.author.author__avatar}}" alt="{{site.data.settings.author.author__name}}">
                       </a>
                       {% endif %}
-    
+
                       <div class="article__meta__bottom">
                         {% if author %}
                           <a class="article__author__name" href="{{ author.url }}">{{ author.name }}</a>
@@ -94,7 +94,7 @@
           <div class="footer__info-box">
             <div class="copyright">{{site.time | date: '%Y'}} &copy; <a href="/">{{site.data.settings.title}} website theme</a>. Crafted & Designed by <a href="https://jekyllthemes.io/developers/artem-sheludko">Artem Sheludko</a>.</div>
             <div class="copyright">{{site.time | date: '%Y'}} &copy; <a href="/">{{site.data.settings.title}} website content</a>. by <a href="https://leoyala.github.io/leo">Leonardo Ayala</a> is licensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"></a></div>
-            <div class="top" title="Top"><i class="ion ion-ios-arrow-round-up"></i></div>
+            <div class="top" title="Top"><i class="fa-solid fa-arrow-up"></i></div>
           </div>
         </div>
 

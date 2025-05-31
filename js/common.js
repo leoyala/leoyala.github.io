@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     menuList = document.querySelector(".main-nav"),
     searchOpenIcon = document.querySelector(".icon__search"),
     searchCloseIcon = document.querySelector(".search__close"),
+    searchOverlay = document.querySelector(".search__overlay"),
     searchInput = document.querySelector(".search__text"),
     search = document.querySelector(".search"),
     searchBox = document.querySelector(".search__box"),
@@ -27,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   searchCloseIcon.addEventListener("click", () => {
+    searchClose();
+  });
+
+  searchOverlay.addEventListener("click", () => {
     searchClose();
   });
 
@@ -55,11 +60,9 @@ document.addEventListener("DOMContentLoaded", function() {
     globalWrap.classList.remove("is-active");
   }
 
-  searchBox.addEventListener("keydown", function(event) {
-    if (event.target == this || event.keyCode == 27) {
-      search.classList.remove('is-visible');
-      body.classList.remove("search-is-visible");
-      globalWrap.classList.remove("is-active");
+  document.addEventListener('keydown', function(e){
+    if (e.key == 'Escape') {
+      searchClose();
     }
   });
 
@@ -172,6 +175,34 @@ document.addEventListener("DOMContentLoaded", function() {
   };
 
   linearGradient();
+
+
+  /* =======================
+  // Copy Code Button
+  ======================= */
+  document.querySelectorAll('.post__content pre.highlight, .page__content pre.highlight')
+  .forEach(function (pre) {
+    const button = document.createElement('button');
+    const copyText = 'Copy';
+    button.type = 'button';
+    button.ariaLabel = 'Copy code to clipboard';
+    button.innerText = copyText;
+    button.addEventListener('click', function () {
+      let code = pre.querySelector('code').innerText;
+      try {
+        code = code.trimEnd();
+      } catch (e) {
+        code = code.trim();
+      }
+      navigator.clipboard.writeText(code);
+      button.innerText = 'Copied!';
+      setTimeout(function () {
+        button.blur();
+        button.innerText = copyText;
+      }, 2e3);
+    });
+    pre.appendChild(button);
+  });
 
 
   /* =======================

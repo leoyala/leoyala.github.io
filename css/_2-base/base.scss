@@ -122,6 +122,46 @@ pre {
   word-wrap: break-word;
   word-break: break-all;
   color: var(--heading-font-color);
+
+  &.highlight {
+    &:hover {
+      button {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.highlight>button {
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
+      background: var(--button-background-hover);
+    }
+  }
+
+  &.highlight>button:active,
+  &.highlight>button:focus {
+    opacity: 1;
+  }
+
+  button {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    color: var(--button-color);
+    background: var(--button-background-color);
+    opacity: 0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
 }
 
 img,
@@ -141,7 +181,7 @@ img,
     font-style: normal;
     font-weight: normal;
     text-align: center;
-  
+
     a {
       font-weight: 600;
       border-bottom: 1px solid transparent;
@@ -152,7 +192,7 @@ img,
         border-color: var(--link-color-hover);
       }
     }
-  
+
     @media only screen and (max-width: $mobile) {
       margin-top: 12px;
     }

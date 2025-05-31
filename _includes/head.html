@@ -1,5 +1,4 @@
 <head>
-  <meta name="google-site-verification" content="GUsQOhBAxICz6yGFXi4IyfyX8hRhYbud535jxDzbpB8" />
   <meta name="twitter:card" content="summary"></meta>
   <script>
     MathJax = {
@@ -32,16 +31,9 @@
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@400;600;700&family=Noto+Serif:wght@700&display=swap" as="style">
-
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@400;600;700&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
 
-
-  <!-- Ionicons -->
-  <link rel="preload" href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" as="style">
-
-  <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
 
   <script>
     {% if site.data.settings.color_scheme == "auto" %}
@@ -63,10 +55,5 @@
     {% endif %}
   </script>
 
-  <style>
-  {% capture include_to_scssify %}
-    {% include main.scss %}
-  {% endcapture %}
-  {{ include_to_scssify | scssify }}
-  </style>
+  <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
 </head>

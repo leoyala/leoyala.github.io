@@ -44,7 +44,7 @@
     color: var(--heading-font-color);
     transition: none;
     background-color: var(--background-alt-color);
-  
+
     &:last-child {
       margin-right: 0;
     }
@@ -254,6 +254,42 @@
     }
   }
 
+  .note, .tip, .important, .warning, .caution {
+    position: relative;
+    padding: 32px 32px 32px 64px;
+    font-family: $base-font-family;
+    border-radius: 8px;
+    color: var(--heading-font-color);
+
+    &::after {
+      content: "\1F4A1";
+      position: absolute;
+      top: 32px;
+      left: 32px;
+      display: block;
+    }
+  }
+
+  .note {
+    background: var(--callout-note);
+  }
+
+  .tip {
+    background: var(--callout-tip);
+  }
+
+  .important {
+    background: var(--callout-important);
+  }
+
+  .warning {
+    background: var(--callout-warning);
+  }
+
+  .caution {
+    background: var(--callout-caution);
+  }
+
   @media only screen and (max-width: $mobile) {
     font-size: inherit;
   }
@@ -303,7 +339,7 @@
     align-items: center;
     width: 40px;
     height: 40px;
-    font-size: 18px;
+    font-size: 16px;
     text-transform: uppercase;
     border: none;
     border-radius: 8px;
@@ -359,7 +395,7 @@
     overflow: hidden;
     margin-right: 24px;
     background-color: var(--background-color);
-  
+
     img {
       position: absolute;
       top: 0;
@@ -370,12 +406,12 @@
       user-select: none;
     }
   }
-  
+
   .card-author__role {
     margin-bottom: 4px;
     font-size: 12px;
   }
-  
+
   .card-author__name {
     margin-bottom: 12px;
     font-size: 21px;
@@ -390,7 +426,7 @@
       }
     }
   }
-  
+
   .card-author__description {
     margin-bottom: 0;
     color: var(--text-alt-color);
@@ -525,7 +561,7 @@
   .error__text {
     color: var(--text-alt-color);
   }
-  
+
   @media only screen and (max-width: $mobile) {
     .error__title {
       font-size: 100px;
