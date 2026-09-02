@@ -218,10 +218,18 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
+});
 
-  /* =======================
-  // Post Table of Contents
-  ======================= */
+
+/* =======================
+// Post Table of Contents
+// Deliberately its own DOMContentLoaded listener rather than part of the block
+// above: listeners run independently, so a throw in the vendored theme code
+// cannot stop the TOC from building (and a bug here cannot break the theme).
+======================= */
+document.addEventListener("DOMContentLoaded", function () {
+  'use strict';
+
   const toc = document.getElementById("js-post-toc"),
     tocContent = document.querySelector(".post__content");
 
