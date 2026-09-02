@@ -33,6 +33,7 @@
     3.8-Contact
     3.9-Sections
     3.10-Subscribe
+    3.11-Post TOC
 :: 4-Layouts
     4.1-Post Page
     4.2-Authors
@@ -100,6 +101,8 @@
 {% include_relative _3-modules/sections.scss %}
 /* >>>>>>>>>>>>>> :: 3.10-Subscribe <<<<<<<<<<<<<<< */
 {% include_relative _3-modules/subscribe.scss %}
+/* >>>>>>>>>>>>>> :: 3.11-Post TOC <<<<<<<<<<<<<<< */
+{% include_relative _3-modules/post-toc.scss %}
 
 
 /* =======================

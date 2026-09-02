@@ -218,4 +218,97 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
+
+  /* =======================
+  // Post Table of Contents
+  ======================= */
+  const toc = document.getElementById("js-post-toc"),
+    tocContent = document.querySelector(".post__content");
+
+  if (toc && tocContent) {
+    const headings = tocContent.querySelectorAll("h1[id], h2[id], h3[id], h4[id]"),
+      tocList = toc.querySelector(".post-toc__list"),
+      wideQuery = window.matchMedia("(min-width: 1300px)");
+
+    // Short posts don't need a table of contents
+    if (headings.length > 2) {
+      const tocLinks = {};
+
+      // Posts don't agree on a starting heading level (some open at h1, others
+      // at h2 and skip to h4), so indent by the levels actually used, not by tag
+      const levels = [];
+      headings.forEach(function (heading) {
+        const level = Number(heading.tagName.charAt(1));
+        if (levels.indexOf(level) === -1) levels.push(level);
+      });
+      levels.sort(function (a, b) { return a - b; });
+
+      headings.forEach(function (heading) {
+        const item = document.createElement("li"),
+          link = document.createElement("a"),
+          depth = Math.min(levels.indexOf(Number(heading.tagName.charAt(1))), 2);
+
+        item.className = "post-toc__item is-level-" + depth;
+        link.className = "post-toc__link";
+        link.href = "#" + heading.id;
+        link.textContent = heading.textContent;
+
+        item.appendChild(link);
+        tocList.appendChild(item);
+        tocLinks[heading.id] = link;
+      });
+
+      toc.hidden = false;
+
+      // Expanded as a rail on wide screens, collapsed as a bar on narrow ones
+      function syncTocState(event) {
+        toc.open = event.matches;
+      }
+
+      syncTocState(wideQuery);
+      wideQuery.addEventListener("change", syncTocState);
+
+      // Collapse the bar again after jumping to a section
+      tocList.addEventListener("click", function (e) {
+        if (e.target.closest(".post-toc__link") && !wideQuery.matches) {
+          toc.open = false;
+        }
+      });
+
+      // Keep the active entry visible inside the rail, never scrolling the page
+      function revealInRail(link) {
+        if (!wideQuery.matches) return;
+
+        const railBox = toc.getBoundingClientRect(),
+          linkBox = link.getBoundingClientRect();
+
+        if (linkBox.top < railBox.top) {
+          toc.scrollTop -= railBox.top - linkBox.top;
+        } else if (linkBox.bottom > railBox.bottom) {
+          toc.scrollTop += linkBox.bottom - railBox.bottom;
+        }
+      }
+
+      // Highlight the section currently being read
+      const tocObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+
+          const link = tocLinks[entry.target.id];
+          if (!link) return;
+
+          for (const id in tocLinks) tocLinks[id].classList.remove("is-active");
+          link.classList.add("is-active");
+          revealInRail(link);
+        });
+      }, {
+        rootMargin: "-80px 0px -70% 0px"
+      });
+
+      headings.forEach(function (heading) {
+        tocObserver.observe(heading);
+      });
+    }
+  }
+
 });

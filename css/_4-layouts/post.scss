@@ -201,6 +201,11 @@
   font-size: 19px;
   color: var(--text-color);
 
+  h2,
+  h3 {
+    scroll-margin-top: 24px;
+  }
+
   a {
     border-bottom: 1px solid var(--link-color);
 

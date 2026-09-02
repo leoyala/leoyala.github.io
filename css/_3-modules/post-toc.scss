@@ -1,0 +1,107 @@
+/* Post Table of Contents */
+
+$toc-width: 200px;
+$toc-gap: 30px;
+$toc-breakpoint: 1300px;
+
+.post-toc {
+  max-width: 780px;
+  margin: 0 auto 32px;
+  border: 1px solid var(--border-color);
+  border-radius: $global-radius;
+  background-color: var(--background-alt-color);
+}
+
+.post-toc__toggle {
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--heading-font-color);
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-left: 10px;
+    vertical-align: middle;
+    border-right: 2px solid var(--text-alt-color);
+    border-bottom: 2px solid var(--text-alt-color);
+    transform: translateY(-2px) rotate(45deg);
+    transition: $global-transition;
+  }
+}
+
+.post-toc[open] > .post-toc__toggle::after {
+  transform: translateY(1px) rotate(-135deg);
+}
+
+.post-toc__body {
+  padding: 0 16px 12px;
+}
+
+.post-toc__item {
+  margin: 0;
+}
+
+.post-toc__link {
+  display: block;
+  padding: 6px 0 6px 12px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--text-alt-color);
+  border-left: 2px solid var(--border-color);
+  transition: $global-transition;
+
+  &:hover {
+    color: var(--brand-color);
+    border-left-color: var(--brand-color);
+  }
+
+  &.is-active {
+    color: var(--brand-color);
+    border-left-color: var(--brand-color);
+  }
+}
+
+.post-toc__item.is-level-1 .post-toc__link {
+  padding-left: 26px;
+  font-size: 14px;
+}
+
+.post-toc__item.is-level-2 .post-toc__link {
+  padding-left: 40px;
+  font-size: 14px;
+}
+
+/* Wide screens: fixed rail in the left gutter beside the 780px article */
+@media only screen and (min-width: $toc-breakpoint) {
+  .post-toc {
+    position: fixed;
+    top: 120px;
+    left: calc(50% - 390px - #{$toc-gap} - #{$toc-width});
+    z-index: 1;
+    width: $toc-width;
+    max-width: none;
+    max-height: calc(100vh - 200px);
+    margin: 0;
+    overflow-y: auto;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+  }
+
+  .post-toc__toggle {
+    display: none;
+  }
+
+  .post-toc__body {
+    padding: 0;
+  }
+}
