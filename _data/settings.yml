@@ -2,7 +2,7 @@
 # Site Settings
 title: Whispers
 logo: /assets/img/whispers-logo-large.png # You can add own logo. For example '/images/logo.png'.
-description: Whispers is a blog containing a wide range of topics from data science to a list of recommended books.
+description: Whispers, a collection of thoughts about science, life outside academia, reading lists, etc.
 color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
 
 
@@ -42,7 +42,7 @@ hero:
 # Author Global Settings
 author:
   author__name: Leonardo Ayala
-  author__bio: I am just just human. I am, among other  things, a scientist attemting to communicate science at different levels. My purpose is to spread the little knowledge that I have acquired and the one that is to come.
+  author__bio: I am just human. I am, among other  things, a scientist attemting to communicate science at different levels. My purpose is to spread the little knowledge that I have acquired and the one that is to come.
   author__avatar: /assets/img/authors/Leonardo Ayala.jpeg
 
 
